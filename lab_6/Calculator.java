@@ -5,15 +5,17 @@ public class Calculator {
     private int num2;
     private String operator;
 
-    public void Calculator() {
+    public Calculator() {
         Scanner scanCalc = new Scanner(System.in);
         
 	System.out.println("Input the first number: ");
-	int num1 = scanCalc.nextLine();
+	int num1 = scanCalc.nextInt();
+	scanCalc.nextLine();
 	System.out.println("Input the operator: ");
 	String operator = scanCalc.nextLine();
 	System.out.println("Input the second number: ");
 	int num2 = scanCalc.nextInt();
+	scanCalc.nextLine();
 
 	switch (operator) {
 		case "+":
@@ -21,10 +23,10 @@ public class Calculator {
 		break;
 
 		case "-":
-		System.out.println(substract(num1, num2));
+		System.out.println(subtract(num1, num2));
 		break;
 
-		case "*":
+		case "x":
 		System.out.println(multiply(num1, num2));
 		break;
 
@@ -38,23 +40,28 @@ public class Calculator {
         /**
          * Enter logic
          */
+	return a+ " + " + b + " = " + (a+b);
+	
     }
 
     public String subtract(int a, int b) {
         /**
          * Enter logic
          */
+	return a+ " - " + b + " = " + (a-b);
     }
 
     public String multiply(int a, int b) {
         /**
          * Enter logic
          */
+	return a+ " * " + b + " = " + (a*b);
     }
 
     public String divide(int a, int b) {
         /**
          * Enter logic
          */
+	return a+ " / " + b + " = " + ((double)a/b);
     }
 }
